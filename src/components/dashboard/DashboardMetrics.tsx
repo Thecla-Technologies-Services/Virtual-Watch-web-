@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckCircle2, ClipboardList, AlertTriangle, Clock } from "lucide-react";
 
 export function DashboardMetrics() {

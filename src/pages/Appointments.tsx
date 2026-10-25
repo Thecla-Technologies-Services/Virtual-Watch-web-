@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { DataTable } from "@/components/ui/DataTable";
@@ -389,7 +389,7 @@ export default function Appointments() {
             <DataTable
               columns={columns}
               data={filteredAppointments}
-              pageSize={8}
+              initialPageSize={8}
             />
           ) : (
             <div className="py-20 flex flex-col items-center justify-center text-center">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Modal } from "@/components/ui/Modal";
 import { Calendar, Clock, ChevronDown, Upload, Image as ImageIcon, FileText, X } from "lucide-react";
 

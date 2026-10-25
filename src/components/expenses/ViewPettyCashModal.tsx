@@ -1,7 +1,6 @@
-import React from "react";
 import { Modal } from "@/components/ui/Modal";
 import type { PettyCashItem } from "@/constants/expenses";
-import { Check, X, Download, AlertCircle, CheckCircle2, XCircle } from "lucide-react";
+import { Check, X, Download, CheckCircle2, XCircle } from "lucide-react";
 
 interface ViewPettyCashModalProps {
   isOpen: boolean;

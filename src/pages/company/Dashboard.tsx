@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { Users, AlertTriangle, Calendar, MoreVertical, Bell, ChevronRight } from "lucide-react";
+import { Users, AlertTriangle, MoreVertical, Bell } from "lucide-react";
 
 /* ── Types & Mock Data ──────────────────────────────────── */
 interface BillingRow {

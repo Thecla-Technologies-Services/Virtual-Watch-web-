@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/DataTable";
 import { Dropdown, DropdownItem } from "@/components/ui/Dropdown";
@@ -361,7 +361,7 @@ export function PettyCashTab() {
           <DataTable
             columns={pettyColumns}
             data={filteredPettyItems}
-            pageSize={8}
+            initialPageSize={8}
           />
         ) : (
           <div className="py-20 flex flex-col items-center justify-center text-center">

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/DataTable";
 import { Dropdown, DropdownItem } from "@/components/ui/Dropdown";
@@ -304,7 +304,7 @@ export function ItemsInstockTab() {
       <div className="flex-1 overflow-auto">
         {filteredItems.length > 0 ? (
           <>
-            <DataTable columns={columns} data={filteredItems} pageSize={8} />
+            <DataTable columns={columns} data={filteredItems} initialPageSize={8} />
             {/* Grand total summary footer matching design */}
             <div className="px-6 py-4.5 border-t flex items-center justify-between text-sm font-extrabold bg-white text-slate-900">
               <span>Grand total</span>

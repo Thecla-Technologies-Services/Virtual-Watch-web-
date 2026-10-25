@@ -1,4 +1,3 @@
-import React from "react";
 import { Modal } from "@/components/ui/Modal";
 import type { HolidayRequest } from "@/constants/holidays";
 import { User, Calendar, Clipboard, Briefcase } from "@duo-icons/react";

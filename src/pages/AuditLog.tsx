@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { DataTable } from "@/components/ui/DataTable";
@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export default function AuditLog() {
-  const [entries, setEntries] = useState<AuditLogEntry[]>(
+  const [entries] = useState<AuditLogEntry[]>(
     INITIAL_AUDIT_LOG_ENTRIES
   );
   const [searchQuery, setSearchQuery] = useState("");
@@ -279,7 +279,7 @@ export default function AuditLog() {
         {/* Data Table */}
         <div className="flex-1 overflow-auto">
           {filteredEntries.length > 0 ? (
-            <DataTable columns={columns} data={filteredEntries} pageSize={8} />
+            <DataTable columns={columns} data={filteredEntries} initialPageSize={8} />
           ) : (
             <div className="py-20 flex flex-col items-center justify-center text-center">
               <div className="bg-slate-50 p-4 rounded-full mb-4">

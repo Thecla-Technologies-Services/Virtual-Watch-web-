@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Modal } from "@/components/ui/Modal";
 import type { TaskItem, TaskSubtask } from "@/constants/tasks";
 import {
@@ -7,7 +7,6 @@ import {
   Clock,
   CheckCircle2,
   Check,
-  Circle,
 } from "lucide-react";
 
 interface ViewTaskModalProps {

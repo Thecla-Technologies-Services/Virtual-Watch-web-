@@ -59,7 +59,7 @@ export function NotificationDetailsModal({ isOpen, onClose, notification }: Noti
 
       {/* Metadata table */}
       <div className="bg-[#FAFAFA] rounded-2xl overflow-hidden mb-6">
-        {rows.map(({ label, value }, i) => (
+        {rows.map(({ label, value }) => (
           <div
             key={label}
             className={`flex items-center justify-between px-4 text-[12px]`}

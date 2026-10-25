@@ -1,10 +1,10 @@
 import { useState, useMemo } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { DataTable } from "@/components/ui/DataTable";
 import { Dropdown, DropdownItem } from "@/components/ui/Dropdown";
-import { Search, Download, MoreVertical, Eye, ClipboardList, Clock, Briefcase, DollarSign } from "lucide-react";
+import { Search, Download, MoreVertical, Eye, ClipboardList, Clock } from "lucide-react";
 
 interface TimesheetRow {
   id: string;

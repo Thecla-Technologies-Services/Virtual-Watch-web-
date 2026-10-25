@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { DataTable } from "@/components/ui/DataTable";
@@ -13,12 +13,7 @@ import { InvitationSentModal } from "@/components/user-management/InvitationSent
 import { DeleteUserModal } from "@/components/user-management/DeleteUserModal";
 import { EditStaffUserModal } from "@/components/user-management/EditStaffUserModal";
 import {
-  Users,
-  CheckCircle2,
-  Mail,
-  UserX,
   Search,
-  ChevronDown,
   Download,
   Upload,
   Plus,
@@ -26,7 +21,6 @@ import {
   Send,
   Edit,
   Trash2,
-  UserPlus,
   FileText,
 } from "lucide-react";
 
@@ -34,8 +28,8 @@ export default function UserManagement() {
   const [users, setUsers] = useState<StaffUser[]>(INITIAL_STAFF_USERS);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
-  const [roleFilter, setRoleFilter] = useState<string>("All roles");
-  const [statusFilter, setStatusFilter] = useState<string>("All status");
+  const [roleFilter] = useState<string>("All roles");
+  const [statusFilter] = useState<string>("All status");
 
   // Modal states
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -335,7 +329,7 @@ export default function UserManagement() {
         {/* Data Table */}
         <div className="flex-1 overflow-auto">
           {filteredUsers.length > 0 ? (
-            <DataTable columns={columns} data={filteredUsers} pageSize={8} />
+            <DataTable columns={columns} data={filteredUsers} initialPageSize={8} />
           ) : (
             <div className="py-20 flex flex-col items-center justify-center text-center">
               <div className="bg-slate-50 p-4 rounded-full mb-4">

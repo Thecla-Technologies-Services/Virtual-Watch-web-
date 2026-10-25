@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { DataTable } from "@/components/ui/DataTable";
@@ -371,7 +371,7 @@ export default function IncidentManagement() {
         {/* Data Table */}
         <div className="flex-1 overflow-auto">
           {filteredIncidents.length > 0 ? (
-            <DataTable columns={columns} data={filteredIncidents} pageSize={8} />
+            <DataTable columns={columns} data={filteredIncidents} initialPageSize={8} />
           ) : (
             <div className="py-20 flex flex-col items-center justify-center text-center">
               <div className="bg-slate-50 p-4 rounded-full mb-4">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Modal } from "@/components/ui/Modal";
 import { ChevronDown, Calendar, Clock, AlertTriangle } from "lucide-react";
 import type { Appointment } from "@/constants/appointments";

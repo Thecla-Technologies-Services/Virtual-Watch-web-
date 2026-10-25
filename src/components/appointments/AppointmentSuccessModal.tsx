@@ -1,4 +1,3 @@
-import React from "react";
 import { Modal } from "@/components/ui/Modal";
 import { CheckCircle2 } from "lucide-react";
 import type { Appointment } from "@/constants/appointments";

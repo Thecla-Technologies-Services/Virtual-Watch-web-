@@ -1,4 +1,3 @@
-import React from "react";
 import { ChevronRight, AlertTriangle, UserCheck } from "lucide-react";
 
 export function TaskReassignmentWidget() {

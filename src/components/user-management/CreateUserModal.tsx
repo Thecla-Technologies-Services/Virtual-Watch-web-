@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Modal } from "@/components/ui/Modal";
 import {
-  AlertTriangle,
   ChevronDown,
   ChevronRight,
-  Upload,
 } from "lucide-react";
 import {User, Camera} from "@duo-icons/react"
 

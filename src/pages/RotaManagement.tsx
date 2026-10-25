@@ -345,7 +345,7 @@ export default function RotaManagement() {
             <DataTable 
               columns={columns} 
               data={filteredRotas} 
-              pageSize={8}
+              initialPageSize={8}
             />
           ) : (
             <div className="py-20 flex flex-col items-center justify-center text-center">

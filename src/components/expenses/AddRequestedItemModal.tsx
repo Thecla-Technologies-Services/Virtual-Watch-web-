@@ -1,4 +1,3 @@
-import React from "react";
 import { Modal } from "@/components/ui/Modal";
 import { Calendar, ChevronDown } from "lucide-react";
 
@@ -11,7 +10,6 @@ interface AddRequestedItemModalProps {
 export function AddRequestedItemModal({
   isOpen,
   onClose,
-  onSave,
 }: AddRequestedItemModalProps) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} width="2xl">

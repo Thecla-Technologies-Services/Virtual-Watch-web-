@@ -4,7 +4,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { DataTable } from "@/components/ui/DataTable";
 import { Dropdown, DropdownItem } from "@/components/ui/Dropdown";
-import { Search, Download, Upload, MoreVertical, FileText, CheckCircle, Eye, AlertCircle, ChevronRight, Calendar, DollarSign, Users, Plus } from "lucide-react";
+import { Search, Download, Upload, MoreVertical, FileText, CheckCircle, Eye, ChevronRight, Calendar, DollarSign, Users, Plus } from "lucide-react";
 import { PaymentStatusModal } from "@/components/payroll/PaymentStatusModal";
 
 interface PayrollCycle {

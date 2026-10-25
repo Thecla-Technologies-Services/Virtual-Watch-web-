@@ -1,5 +1,4 @@
-import React from "react";
-import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function WeeklyRota() {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import { Modal } from "@/components/ui/Modal";
 import type { CareIncident } from "@/constants/incidents";
 import { Location, User, Calendar, FolderUpload } from "@duo-icons/react";
