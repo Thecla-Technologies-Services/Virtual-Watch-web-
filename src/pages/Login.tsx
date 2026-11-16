@@ -4,18 +4,27 @@ import { useAuth } from '../contexts/AuthContext';
 import { Eye, EyeOff } from 'lucide-react';
 import logo from '../assets/virtual-watch.png';
 import citySkyline from '../assets/city_skyline.png';
+import type { UserRole } from '../types/auth';
+
+// Temporary: lets us simulate each role's experience until the auth APIs are available.
+const ROLE_OPTIONS: { value: UserRole; label: string }[] = [
+  { value: 'admin', label: 'Admin' },
+  { value: 'company_admin', label: 'Company Admin' },
+  { value: 'portal_owner', label: 'Portal Owner' },
+];
 
 export default function Login() {
   const [email, setEmail] = useState('ops@Bulaba-care.co.uk');
   const [password, setPassword] = useState('password123');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [role, setRole] = useState<UserRole>('admin');
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await login(email, password);
+    await login(email, password, role);
     navigate('/');
   };
 
@@ -98,6 +107,25 @@ export default function Login() {
                 </button>
               </div>
             </div>
+
+            <fieldset className="space-y-2">
+              <legend className="text-sm font-semibold text-slate-600 mb-2">Sign in as</legend>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                {ROLE_OPTIONS.map((option) => (
+                  <label key={option.value} className="flex items-center gap-2 text-[14px] font-medium text-slate-500 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="role"
+                      value={option.value}
+                      checked={role === option.value}
+                      onChange={() => setRole(option.value)}
+                      className="h-[18px] w-[18px] border-slate-200 text-[#42A5E2] focus:ring-[#42A5E2]"
+                    />
+                    {option.label}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
 
             <div className="flex items-center gap-3 pt-2">
               <input

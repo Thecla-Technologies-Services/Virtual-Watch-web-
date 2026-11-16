@@ -17,11 +17,17 @@ const MOCK_ADMIN_USER: User = {
   jobTitle: 'Company Admin'
 };
 
+const MOCK_JOB_TITLES: Record<UserRole, string> = {
+  admin: 'Admin',
+  company_admin: 'Company Admin',
+  portal_owner: 'Portal Owner',
+};
+
 interface AuthContextType {
   user: User | null;
   hasRole: (role: UserRole) => boolean;
   hasAnyRole: (roles: UserRole[]) => boolean;
-  login: (email?: string, password?: string) => Promise<void>;
+  login: (email?: string, password?: string, simulatedRole?: UserRole) => Promise<void>;
   logout: () => void;
 }
 
@@ -36,7 +42,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const checkRole = (role: UserRole) => hasRole(user, role);
   const checkAnyRole = (roles: UserRole[]) => hasAnyRole(user, roles);
 
-  const login = async (email?: string, password?: string) => {
+  const login = async (email?: string, password?: string, simulatedRole?: UserRole) => {
     if (email && password) {
       try {
         const response = await authService.login({ email, password });
@@ -68,8 +74,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     
     // Fallback if API fails or no credentials provided
-    setUser(MOCK_ADMIN_USER);
-    localStorage.setItem('auth_user', JSON.stringify(MOCK_ADMIN_USER));
+    const mockUser: User = simulatedRole
+      ? { ...MOCK_ADMIN_USER, role: simulatedRole, jobTitle: MOCK_JOB_TITLES[simulatedRole] }
+      : MOCK_ADMIN_USER;
+    setUser(mockUser);
+    localStorage.setItem('auth_user', JSON.stringify(mockUser));
   };
   
   const logout = () => {

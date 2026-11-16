@@ -32,10 +32,22 @@ export const menuItems: MenuItem[] = [
   { name: "Release note", icon: Bookmark, roles: ['company_admin'] },
   { name: "Notifications", icon: Clipboard, roles: ['company_admin'] },
   { name: "Company profile", icon: User, roles: ['company_admin'] },
+
+  // Portal Owner items
+  { name: "Dashboard", icon: App, path: "/portal-owner/dashboard", roles: ['portal_owner'] },
+  { name: "Companies", icon: User, path: "/portal-owner/companies", roles: ['portal_owner'] },
+  { name: "Users", icon: User, path: "/portal-owner/users", roles: ['portal_owner'] },
+  { name: "Finance", icon: Calendar, path: "/portal-owner/finance", roles: ['portal_owner'] },
+  { name: "Messages", icon: Clipboard, path: "/portal-owner/messages", roles: ['portal_owner'] },
+  { name: "Subscriptions", icon: Clock, path: "/portal-owner/subscriptions", roles: ['portal_owner'] },
+  { name: "Announcements", icon: Clipboard, path: "/portal-owner/announcements", roles: ['portal_owner'] },
+  { name: "Audit logs", icon: CheckCircle, path: "/portal-owner/audit-logs", roles: ['portal_owner'] },
+  { name: "Referrals", icon: Calendar, path: "/portal-owner/referrals", roles: ['portal_owner'] },
 ];
 
 export const generalItems: MenuItem[] = [
   { name: "Analytics", icon: IdCard, roles: ['admin'] },
   { name: "Support centre", icon: IdCard, roles: ['company_admin'] },
+  { name: "Support", icon: IdCard, path: "/portal-owner/support", roles: ['portal_owner'] },
   { name: "Settings", icon: Briefcase }, // Usually everyone needs settings
 ];
